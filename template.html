@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- style here -->
+	<title>{{render_title}}</title>
+</head>
+<body> <i class="spinner fa fa-circle-o-notch fa-spin fa-3x fa-fw hide"></i>
+	<div class="container-fluid">
+		<div class="wrap-header">
+			<div class="row row-offcanvas row-offcanvas-right">
+				<div class="col-md-12">
+					<div class="page-header clearfix">
+						<div class="pull-right">
+							<h4>
+								<span class="label label-info" style="display:block">
+									<span class="hidden-xs">Last Updated:</span>
+									<span class="last-updated">{{data.general.date_time}}</span>
+								</span>
+							</h4>
+						</div>
+						<h1>
+							<span class="hidden-xs hidden-sm"> <i class="fa fa-tachometer"></i>
+								Dashboard
+							</span>
+							<span class="visible-xs visible-sm">
+								<i class="fa fa-bars nav-minibars"></i>
+								<i class="fa fa-circle nav-ws-status mini"></i>
+							</span>
+						</h1>
+						<div class="report-title"></div>
+					</div>
+					<div class="wrap-general">
+						<h4 class="hidden-xs gheader">
+							Overall Analyzed Requests
+							<span class="pull-right">
+								<span class="from">{{data.general.start_date}}</span>
+								—
+								<span class="to">{{data.general.end_date}}</span>
+							</span>
+						</h4>
+						<h5 class="visible-xs hidden-sm hidden-md hidden-lg gheader">
+							Overall Analyzed Requests&nbsp;&nbsp;
+							<span class="from">{{data.general.start_date}}</span>
+							—
+							<span class="to">{{data.general.end_date}}</span>
+						</h5>
+						<div class="wrap-general-items">
+							<div class="row">
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module black">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Total Requests
+											</div>
+											<h3 id="total_requests" style="padding-top: 0;">{{data.general.total_requests}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module green">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Valid Requests
+											</div>
+											<h3 id="valid_requests" style="padding-top: 0;">{{data.general.valid_requests}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module red">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Failed Requests
+											</div>
+											<h3 id="failed_requests" style="padding-top: 0;">{{data.general.failed_requests}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Init. Proc. Time
+											</div>
+											<h3 id="generation_time" style="padding-top: 0;">{{data.general.generation_time}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module blue">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Unique Visitors
+											</div>
+											<h3 id="unique_visitors" style="padding-top: 0;">{{data.general.unique_visitors}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Unique Files
+											</div>
+											<h3 id="unique_files" style="padding-top: 0;">{{data.general.unique_files}}</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Excl. IP Hits
+											</div>
+											<h3 id="excluded_hits" style="padding-top: 0;">{{data.general.excluded_hits}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Referrers
+											</div>
+											<h3 id="unique_referrers" style="padding-top: 0;">{{data.general.unique_referrers}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Unique 404
+											</div>
+											<h3 id="unique_not_found" style="padding-top: 0;">{{data.general.unique_not_found}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Static Files
+											</div>
+											<h3 id="unique_static_files" style="padding-top: 0;">{{data.general.unique_static_files}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Log Size
+											</div>
+											<h3 id="log_size" style="padding-top: 0;">{{data.general.log_size}}</h3>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="col-md-2">
+										<div class="grid-module gray">
+											<div class="col-title">
+												<i class="fa fa-bar-chart"></i>
+												Bandwidth
+											</div>
+											<h3 id="bandwidth" style="padding-top: 0;">{{data.general.bandwidth}}</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-panels">
+			<div class="row equal">
+				<div class="col-md-6 wrap-panel">
+					<div id="panel-visitors">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group clearfix panel-header">
+									<h4 class="pull-left hidden-xs gheader" id="visitors">
+										Unique visitors per day - Including spiders
+										<br>
+										<small>Hits having the same IP, date and agent are a unique visit.</small>
+									</h4>
+									<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="visitors">
+										Unique visitors per day - Including spiders
+										<br>
+										<small>Hits having the same IP, date and agent are a unique visit.</small>
+									</h5>
+									<div class="panel-plot-wrap"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row clearfix table-wrapper hidden-xs">
+							<div class="col-md-12">
+								<div class="table-responsive">
+									<table data-panel="visitors" class="table table-borderless table-hover table-visitors">
+										<colgroup>
+										<col style="width: 3%;">
+										<!-- row # -->
+										<col style="width:12%">
+										<col style="width:12%">
+										<col style="width:12%">
+										<col style="width:100%"></colgroup>
+									<thead>
+										<tr>
+											<th>#</th>
+											<th class="numeric sortable" data-key="hits">
+												Hits
+												<i class="fa fa-sort"></i>
+											</th>
+											<th class="numeric sortable" data-key="visitors">
+												Visitors
+												<i class="fa fa-sort"></i>
+											</th>
+											<th class="bytes sortable" data-key="bytes">
+												Bandwidth
+												<i class="fa fa-sort"></i>
+											</th>
+											<th class="date sortable" data-key="data" data-order="desc">
+												Data
+												<i class="fa fa-caret-down"></i>
+											</th>
+										</tr>
+									</thead>
+									<tbody class="tbody-meta">
+										<tr>
+											<td class=""></td>
+											<td class="text-right">
+												<h4 class="value">
+													<span title="count">{{data.visitors.metadata.bytes.count|format_bytes}}</span>
+													<br>
+													<small>Max: {{data.visitors.metadata.bytes.max|format_bytes}}</small>
+													<br>
+													<small>Min: {{data.visitors.metadata.bytes.min|format_bytes}}</small>
+												</h4>
+											</td>
+											<td class="text-right">
+												<h4 class="value">
+													<span title="count">{{data.visitors.metadata.visitors.count}}</span>
+													<br>
+													<small>Max: {{data.visitors.metadata.visitors.max}}</small>
+													<br>
+													<small>Min: {{data.visitors.metadata.visitors.min}}</small>
+												</h4>
+											</td>
+											<td class="text-right">
+												<h4 class="value">
+													<span title="count">{{data.visitors.metadata.hits.count}}</span>
+													<br>
+													<small>Max: {{data.visitors.metadata.hits.max}}</small>
+													<br>
+													<small>Min: {{data.visitors.metadata.hits.min}}</small>
+												</h4>
+											</td>
+											<td class="trunctext-right">
+												<h4 class="value">
+													<span title="unique">{{data.visitors.metadata.data.unique}}</span>
+													<small>Total</small>
+												</h4>
+											</td>
+										</tr>
+									</tbody>
+									<tbody class="tbody-data">
+										{% if data.visitors.metadata.data.unique == 0 %}
+										<tr class="" data-panel="">
+											<td class="row-idx text-right"></td>
+											<td class="text-center" colspan="7">
+												<span class="value">No data on this panel.</span>
+											</td>
+										</tr>
+										{% else %}
+										{% for item in data.visitors.data[:render_limit] %}
+										<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="visitors" data-key="8bef7ac8">
+											<td class="row-idx text-right">{{loop.index}}</td>
+											<td class="text-right">
+												<span class="value">{{item.hits.count}}</span>
+												<span class="percent">({{item.hits.percent}}%)</span>
+											</td>
+											<td class="text-right">
+												<span class="value">{{item.visitors.count}}</span>
+												<span class="percent">({{item.visitors.percent}}%)</span>
+											</td>
+											<td class="text-right">
+												<span class="value">{{item.bytes.count|format_bytes}}</span>
+												<span class="percent">({{item.bytes.percent}}%)</span>
+											</td>
+											<td class="trunctext-right">
+												<span class="value">{{item.data}}</span>
+											</td>
+										</tr>
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 wrap-panel">
+				<div id="panel-requests">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group clearfix panel-header">
+								<h4 class="pull-left hidden-xs gheader" id="requests">
+									Requested Files (URLs)
+									<br>
+									<small>
+										Top requests sorted by hits [, avgts, cumts, maxts, mthd, proto]
+									</small>
+								</h4>
+								<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="requests">
+									Requested Files (URLs)
+									<br>
+									<small>
+										Top requests sorted by hits [, avgts, cumts, maxts, mthd, proto]
+									</small>
+								</h5>
+								<div class="panel-plot-wrap"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row clearfix table-wrapper hidden-xs">
+						<div class="col-md-12">
+							<div class="table-responsive">
+								<table data-panel="requests" class="table table-borderless table-hover table-requests">
+									<colgroup>
+									<col style="width: 3%;">
+									<!-- row # -->
+									<col style="width:12%">
+									<col style="width:12%">
+									<col style="width:12%">
+									<col style="width:6%">
+									<col style="width:7%">
+									<col style="width:100%"></colgroup>
+								<thead>
+									<tr>
+										<th>#</th>
+										<th class="numeric sortable" data-key="hits" data-order="desc">
+											Hits
+											<i class="fa fa-caret-down"></i>
+										</th>
+										<th class="numeric sortable" data-key="visitors">
+											Visitors
+											<i class="fa fa-sort"></i>
+										</th>
+										<th class="bytes sortable" data-key="bytes">
+											Bandwidth
+											<i class="fa fa-sort"></i>
+										</th>
+										<th class="string sortable" data-key="method">
+											Method
+											<i class="fa fa-sort"></i>
+										</th>
+										<th class="string sortable" data-key="protocol">
+											Protocol
+											<i class="fa fa-sort"></i>
+										</th>
+										<th class="string sortable" data-key="data">
+											Data
+											<i class="fa fa-sort"></i>
+										</th>
+									</tr>
+								</thead>
+								<tbody class="tbody-meta">
+									<tr>
+										<td class=""></td>
+										<td class="text-right">
+											<h4 class="value">
+												<span title="count">{{data.requests.metadata.bytes.count|format_bytes}}</span>
+												<br>
+												<small>Max: {{data.requests.metadata.bytes.max|format_bytes}}</small>
+												<br>
+												<small>Min: {{data.requests.metadata.bytes.min|format_bytes}}</small>
+											</h4>
+										</td>
+										<td class="text-right">
+											<h4 class="value">
+												<span title="count">{{data.requests.metadata.visitors.count}}</span>
+												<br>
+												<small>Max: {{data.requests.metadata.visitors.max}}</small>
+												<br>
+												<small>Min: {{data.requests.metadata.visitors.min}}</small>
+											</h4>
+										</td>
+										<td class="text-right">
+											<h4 class="value">
+												<span title="count">{{data.requests.metadata.hits.count}}</span>
+												<br>
+												<small>Max: {{data.requests.metadata.hits.max}}</small>
+												<br>
+												<small>Min: {{data.requests.metadata.hits.min}}</small>
+											</h4>
+										</td>
+										<td class=""></td>
+										<td class=""></td>
+										<td class="trunc">
+											<h4 class="value">
+												<span title="unique">{{data.requests.metadata.data.unique}}</span>
+												<small>Total</small>
+											</h4>
+										</td>
+									</tr>
+								</tbody>
+								<tbody class="tbody-data">
+									{% if data.requests.metadata.data.unique == 0 %}
+									<tr class="" data-panel="">
+										<td class="row-idx text-right"></td>
+										<td class="text-center" colspan="7">
+											<span class="value">No data on this panel.</span>
+										</td>
+									</tr>
+									{% else %}
+									{% for item in data.requests.data[:render_limit] %}
+									<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="requests" data-key="2f">
+										<td class="row-idx text-right">{{loop.index}}</td>
+										<td class="text-right">
+											<span class="value">{{item.hits.count}}</span>
+											<span class="percent">({{item.hits.percent}}%)</span>
+										</td>
+										<td class="text-right">
+											<span class="value">{{item.visitors.count}}</span>
+											<span class="percent">({{item.visitors.percent}}%)</span>
+										</td>
+										<td class="text-right">
+											<span class="value">{{item.bytes.count|format_bytes}}</span>
+											<span class="percent">({{item.bytes.percent}}%)</span>
+										</td>
+										<td class="">
+											<span class="value">{{item.method}}</span>
+										</td>
+										<td class="">
+											<span class="value">{{item.protocol}}</span>
+										</td>
+										<td class="trunc">
+											<span class="value">{{item.data}}</span>
+										</td>
+									</tr>
+									{% endfor %}
+									{% endif %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row equal">
+		<div class="col-md-6 wrap-panel">
+			<div id="panel-static_requests">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group clearfix panel-header">
+							<h4 class="pull-left hidden-xs gheader" id="static_requests">
+								Static Requests
+								<br>
+								<small>
+									Top static requests sorted by hits [, avgts, cumts, maxts, mthd, proto]
+								</small>
+							</h4>
+							<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="static_requests">
+								Static Requests
+								<br>
+								<small>
+									Top static requests sorted by hits [, avgts, cumts, maxts, mthd, proto]
+								</small>
+							</h5>
+							<div class="panel-plot-wrap"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row clearfix table-wrapper hidden-xs">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table data-panel="static_requests" class="table table-borderless table-hover table-static_requests">
+								<colgroup>
+								<col style="width: 3%;">
+								<!-- row # -->
+								<col style="width:12%">
+								<col style="width:12%">
+								<col style="width:12%">
+								<col style="width:6%">
+								<col style="width:7%">
+								<col style="width:100%"></colgroup>
+							<thead>
+								<tr>
+									<th>#</th>
+									<th class="numeric sortable" data-key="hits" data-order="desc">
+										Hits
+										<i class="fa fa-caret-down"></i>
+									</th>
+									<th class="numeric sortable" data-key="visitors">
+										Visitors
+										<i class="fa fa-sort"></i>
+									</th>
+									<th class="bytes sortable" data-key="bytes">
+										Bandwidth
+										<i class="fa fa-sort"></i>
+									</th>
+									<th class="string sortable" data-key="method">
+										Method
+										<i class="fa fa-sort"></i>
+									</th>
+									<th class="string sortable" data-key="protocol">
+										Protocol
+										<i class="fa fa-sort"></i>
+									</th>
+									<th class="string sortable" data-key="data">
+										Data
+										<i class="fa fa-sort"></i>
+									</th>
+								</tr>
+							</thead>
+							<tbody class="tbody-meta">
+								<tr>
+									<td class=""></td>
+									<td class="text-right">
+										<h4 class="value">
+											<span title="count">{{data.static_requests.metadata.bytes.count|format_bytes}}</span>
+											<br>
+											<small>Max: {{data.static_requests.metadata.bytes.max|format_bytes}}</small>
+											<br>
+											<small>Min: {{data.static_requests.metadata.bytes.min|format_bytes}}</small>
+										</h4>
+									</td>
+									<td class="text-right">
+										<h4 class="value">
+											<span title="count">{{data.static_requests.metadata.visitors.count}}</span>
+											<br>
+											<small>Max: {{data.static_requests.metadata.visitors.max}}</small>
+											<br>
+											<small>Min: {{data.static_requests.metadata.visitors.min}}</small>
+										</h4>
+									</td>
+									<td class="text-right">
+										<h4 class="value">
+											<span title="count">{{data.static_requests.metadata.hits.count}}</span>
+											<br>
+											<small>Max: {{data.static_requests.metadata.hits.max}}</small>
+											<br>
+											<small>Min: {{data.static_requests.metadata.hits.min}}</small>
+										</h4>
+									</td>
+									<td class=""></td>
+									<td class=""></td>
+									<td class="trunc">
+										<h4 class="value">
+											<span title="unique">{{data.static_requests.metadata.data.unique}}</span>
+											<small>Total</small>
+										</h4>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="tbody-data">
+								{% if data.static_requests.metadata.data.unique == 0 %}
+								<tr class="" data-panel="">
+									<td class="row-idx text-right"></td>
+									<td class="text-center" colspan="7">
+										<span class="value">No data on this panel.</span>
+									</td>
+								</tr>
+								{% else %}
+								{% for item in data.static_requests.data[:render_limit] %}
+								<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="static_requests" data-key="e8c193ba">
+									<td class="row-idx text-right">{{loop.index}}</td>
+									<td class="text-right">
+										<span class="value">{{item.hits.count}}</span>
+										<span class="percent">({{item.hits.percent}}%)</span>
+									</td>
+									<td class="text-right">
+										<span class="value">{{item.visitors.count}}</span>
+										<span class="percent">({{item.visitors.percent}}%)</span>
+									</td>
+									<td class="text-right">
+										<span class="value">{{item.bytes.count|format_bytes}}</span>
+										<span class="percent">({{item.bytes.percent}}%)</span>
+									</td>
+									<td class="">
+										<span class="value">{{item.method}}</span>
+									</td>
+									<td class="">
+										<span class="value">{{item.protocol}}</span>
+									</td>
+									<td class="trunc">
+										<span class="value">{{item.data}}</span>
+									</td>
+								</tr>
+								{% endfor %}
+								{% endif %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 wrap-panel">
+		<div id="panel-not_found">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group clearfix panel-header">
+						<h4 class="pull-left hidden-xs gheader" id="not_found">
+							Not Found URLs (404s)
+							<br>
+							<small>
+								Top not found URLs sorted by hits [, avgts, cumts, maxts, mthd, proto]
+							</small>
+						</h4>
+						<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="not_found">
+							Not Found URLs (404s)
+							<br>
+							<small>
+								Top not found URLs sorted by hits [, avgts, cumts, maxts, mthd, proto]
+							</small>
+						</h5>
+						<div class="panel-plot-wrap"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row clearfix table-wrapper hidden-xs">
+				<div class="col-md-12">
+					<div class="table-responsive">
+						<table data-panel="not_found" class="table table-borderless table-hover table-not_found">
+							<colgroup>
+							<col style="width: 3%;">
+							<!-- row # -->
+							<col style="width:12%">
+							<col style="width:12%">
+							<col style="width:12%">
+							<col style="width:6%">
+							<col style="width:7%">
+							<col style="width:100%"></colgroup>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th class="numeric sortable" data-key="hits" data-order="desc">
+									Hits
+									<i class="fa fa-caret-down"></i>
+								</th>
+								<th class="numeric sortable" data-key="visitors">
+									Visitors
+									<i class="fa fa-sort"></i>
+								</th>
+								<th class="bytes sortable" data-key="bytes">
+									Bandwidth
+									<i class="fa fa-sort"></i>
+								</th>
+								<th class="string sortable" data-key="method">
+									Method
+									<i class="fa fa-sort"></i>
+								</th>
+								<th class="string sortable" data-key="protocol">
+									Protocol
+									<i class="fa fa-sort"></i>
+								</th>
+								<th class="string sortable" data-key="data">
+									Data
+									<i class="fa fa-sort"></i>
+								</th>
+							</tr>
+						</thead>
+						<tbody class="tbody-meta">
+							<tr>
+								<td class=""></td>
+								<td class="text-right">
+									<h4 class="value">
+										<span title="count">{{data.not_found.metadata.bytes.count|format_bytes}}</span>
+										<br>
+										<small>Max: {{data.not_found.metadata.bytes.max|format_bytes}}</small>
+										<br>
+										<small>Min: {{data.not_found.metadata.bytes.min|format_bytes}}</small>
+									</h4>
+								</td>
+								<td class="text-right">
+									<h4 class="value">
+										<span title="count">{{data.not_found.metadata.visitors.count}}</span>
+										<br>
+										<small>Max: {{data.not_found.metadata.visitors.max}}</small>
+										<br>
+										<small>Min: {{data.not_found.metadata.visitors.min}}</small>
+									</h4>
+								</td>
+								<td class="text-right">
+									<h4 class="value">
+										<span title="count">{{data.not_found.metadata.hits.count}}</span>
+										<br>
+										<small>Max: {{data.not_found.metadata.hits.max}}</small>
+										<br>
+										<small>Min: {{data.not_found.metadata.hits.min}}</small>
+									</h4>
+								</td>
+								<td class=""></td>
+								<td class=""></td>
+								<td class="trunc">
+									<h4 class="value">
+										<span title="unique">{{data.not_found.metadata.data.unique}}</span>
+										<small>Total</small>
+									</h4>
+								</td>
+							</tr>
+						</tbody>
+						<tbody class="tbody-data">
+							{% if data.not_found.metadata.data.unique == 0 %}
+							<tr class="" data-panel="">
+								<td class="row-idx text-right"></td>
+								<td class="text-center" colspan="7">
+									<span class="value">No data on this panel.</span>
+								</td>
+							</tr>
+							{% else %}
+							{% for item in data.not_found.data[:render_limit] %}
+							<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="not_found" data-key="e8c193ba">
+								<td class="row-idx text-right">{{loop.index}}</td>
+								<td class="text-right">
+									<span class="value">{{item.hits.count}}</span>
+									<span class="percent">({{item.hits.percent}}%)</span>
+								</td>
+								<td class="text-right">
+									<span class="value">{{item.visitors.count}}</span>
+									<span class="percent">({{item.visitors.percent}}%)</span>
+								</td>
+								<td class="text-right">
+									<span class="value">{{item.bytes.count|format_bytes}}</span>
+									<span class="percent">({{item.bytes.percent}}%)</span>
+								</td>
+								<td class="">
+									<span class="value">{{item.method}}</span>
+								</td>
+								<td class="">
+									<span class="value">{{item.protocol}}</span>
+								</td>
+								<td class="trunc">
+									<span class="value">{{item.data}}</span>
+								</td>
+							</tr>
+							{% endfor %}
+							{% endif %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="row equal">
+<div class="col-md-6 wrap-panel">
+	<div id="panel-hosts">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group clearfix panel-header">
+					<h4 class="pull-left hidden-xs gheader" id="hosts">
+						Visitor Hostnames and IPs
+						<br>
+						<small>Top visitor hosts sorted by hits [, avgts, cumts, maxts]</small>
+					</h4>
+					<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="hosts">
+						Visitor Hostnames and IPs
+						<br>
+						<small>Top visitor hosts sorted by hits [, avgts, cumts, maxts]</small>
+					</h5>
+					<div class="panel-plot-wrap"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix table-wrapper hidden-xs">
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table data-panel="hosts" class="table table-borderless table-hover table-hosts">
+						<colgroup>
+						<col style="width: 2%;">
+						<!-- right-caret -->
+						<col style="width: 3%;">
+						<!-- row # -->
+						<col style="width:12%">
+						<col style="width:12%">
+						<col style="width:12%">
+						<col style="width:">
+						<col style="width:100%"></colgroup>
+					<thead>
+						<tr>
+							<th></th>
+							<th>#</th>
+							<th class="numeric sortable" data-key="hits" data-order="desc">
+								Hits
+								<i class="fa fa-caret-down"></i>
+							</th>
+							<th class="numeric sortable" data-key="visitors">
+								Visitors
+								<i class="fa fa-sort"></i>
+							</th>
+							<th class="bytes sortable" data-key="bytes">
+								Bandwidth
+								<i class="fa fa-sort"></i>
+							</th>
+							<th class="string sortable" data-key="country">
+								Country
+								<i class="fa fa-sort"></i>
+							</th>
+							<th class="string sortable" data-key="data">
+								Data
+								<i class="fa fa-sort"></i>
+							</th>
+						</tr>
+					</thead>
+					<tbody class="tbody-meta">
+						<tr>
+							<td class=""></td>
+							<td class=""></td>
+							<td class="text-right">
+								<h4 class="value">
+									<span title="count">{{data.hosts.metadata.bytes.count|format_bytes}}</span>
+									<br>
+									<small>Max: {{data.hosts.metadata.bytes.max|format_bytes}}</small>
+									<br>
+									<small>Min: {{data.hosts.metadata.bytes.min|format_bytes}}</small>
+								</h4>
+							</td>
+							<td class="text-right">
+								<h4 class="value">
+									<span title="count">{{data.hosts.metadata.visitors.count}}</span>
+									<br>
+									<small>Max: {{data.hosts.metadata.visitors.max}}</small>
+									<br>
+									<small>Min: {{data.hosts.metadata.visitors.min}}</small>
+								</h4>
+							</td>
+							<td class="text-right">
+								<h4 class="value">
+									<span title="count">{{data.hosts.metadata.hits.count}}</span>
+									<br>
+									<small>Max: {{data.hosts.metadata.hits.max}}</small>
+									<br>
+									<small>Min: {{data.hosts.metadata.hits.min}}</small>
+								</h4>
+							</td>
+							<td class=""></td>
+							<td class="trunc">
+								<h4 class="value">
+									<span title="unique">{{data.hosts.metadata.data.unique}}</span>
+									<small>Total</small>
+								</h4>
+							</td>
+						</tr>
+					</tbody>
+					<tbody class="tbody-data">
+						{% if data.hosts.metadata.data.unique == 0 %}
+						<tr class="" data-panel="">
+							<td class="row-idx text-right"></td>
+							<td class="text-center" colspan="7">
+								<span class="value">No data on this panel.</span>
+							</td>
+						</tr>
+						{% else %}
+						{% for item in data.hosts.data[:render_limit] %}
+						<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="hosts" data-key="c8817ade">
+							<td class="row-expandable text-center clickable">
+								<i class="fa fa fa-caret-right"></i>
+							</td>
+							<td class="row-idx text-right">{{loop.index}}</td>
+							<td class="text-right">
+								<span class="value">{{item.hits.count}}</span>
+								<span class="percent">({{item.hits.percent}}%)</span>
+							</td>
+							<td class="text-right">
+								<span class="value">{{item.visitors.count}}</span>
+								<span class="percent">({{item.visitors.percent}}%)</span>
+							</td>
+							<td class="text-right">
+								<span class="value">{{item.bytes.count|format_bytes}}</span>
+								<span class="percent">({{item.bytes.percent}}%)</span>
+							</td>
+							<td class="">
+								<span class="value">{{item.country}}</span>
+							</td>
+							<td class="trunc">
+								<span class="value">{{item.data}}</span>
+							</td>
+						</tr>
+						{% if render_child %}
+						{% set outer_loop = loop %}
+						{% for detail in item.details %}
+						<tr class="child {{outer_loop.index|shaded}}" data-panel="hosts">
+							<td class="row-expandable text-center "> <i></i></td>
+							<td class="row-idx text-right"></td>
+							<td class="child " colspan="5">
+								<span class="value">
+									{{detail}}
+								</span>
+							</td>
+						</tr>
+						{% endfor %}
+						{% endif %}
+						{% endfor %}
+						{% endif %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="col-md-6 wrap-panel">
+<div id="panel-os">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-group clearfix panel-header">
+				<h4 class="pull-left hidden-xs gheader" id="os">
+					Operating Systems
+					<br>
+					<small>Top Operating Systems sorted by hits [, avgts, cumts, maxts]</small>
+				</h4>
+				<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="os">
+					Operating Systems
+					<br>
+					<small>Top Operating Systems sorted by hits [, avgts, cumts, maxts]</small>
+				</h5>
+				<div class="panel-plot-wrap"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix table-wrapper hidden-xs">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table data-panel="os" class="table table-borderless table-hover table-os">
+					<colgroup>
+					<col style="width: 2%;">
+					<!-- right-caret -->
+					<col style="width: 3%;">
+					<!-- row # -->
+					<col style="width:12%">
+					<col style="width:12%">
+					<col style="width:12%">
+					<col style="width:100%"></colgroup>
+				<thead>
+					<tr>
+						<th></th>
+						<th>#</th>
+						<th class="numeric sortable" data-key="hits" data-order="desc">
+							Hits
+							<i class="fa fa-caret-down"></i>
+						</th>
+						<th class="numeric sortable" data-key="visitors">
+							Visitors
+							<i class="fa fa-sort"></i>
+						</th>
+						<th class="bytes sortable" data-key="bytes">
+							Bandwidth
+							<i class="fa fa-sort"></i>
+						</th>
+						<th class="string sortable" data-key="data">
+							Data
+							<i class="fa fa-sort"></i>
+						</th>
+					</tr>
+				</thead>
+				<tbody class="tbody-meta">
+					<tr>
+						<td class=""></td>
+						<td class=""></td>
+						<td class="text-right">
+							<h4 class="value">
+								<span title="count">{{data.os.metadata.bytes.count|format_bytes}}</span>
+								<br>
+								<small>Max: {{data.os.metadata.bytes.max|format_bytes}}</small>
+								<br>
+								<small>Min: {{data.os.metadata.bytes.min|format_bytes}}</small>
+							</h4>
+						</td>
+						<td class="text-right">
+							<h4 class="value">
+								<span title="count">{{data.os.metadata.visitors.count}}</span>
+								<br>
+								<small>Max: {{data.os.metadata.visitors.max}}</small>
+								<br>
+								<small>Min: {{data.os.metadata.visitors.min}}</small>
+							</h4>
+						</td>
+						<td class="text-right">
+							<h4 class="value">
+								<span title="count">{{data.os.metadata.hits.count}}</span>
+								<br>
+								<small>Max: {{data.os.metadata.hits.max}}</small>
+								<br>
+								<small>Min: {{data.os.metadata.hits.min}}</small>
+							</h4>
+						</td>
+						<td class="trunc">
+							<h4 class="value">
+								<span title="unique">{{data.os.metadata.data.unique}}</span>
+								<small>Total</small>
+							</h4>
+						</td>
+					</tr>
+				</tbody>
+				<tbody class="tbody-data">
+					{% if data.os.metadata.data.unique == 0 %}
+					<tr class="" data-panel="">
+						<td class="row-idx text-right"></td>
+						<td class="text-center" colspan="7">
+							<span class="value">No data on this panel.</span>
+						</td>
+					</tr>
+					{% else %}
+					{% for item in data.os.data[:render_limit] %}
+					<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="os" data-key="b3a83a63">
+						<td class="row-expandable text-center clickable">
+							<i class="fa fa fa-caret-right"></i>
+						</td>
+						<td class="row-idx text-right">{{loop.index}}</td>
+						<td class="text-right">
+							<span class="value">{{item.hits.count}}</span>
+							<span class="percent">({{item.hits.percent}}%)</span>
+						</td>
+						<td class="text-right">
+							<span class="value">{{item.visitors.count}}</span>
+							<span class="percent">({{item.visitors.percent}}%)</span>
+						</td>
+						<td class="text-right">
+							<span class="value">{{item.bytes.count|format_bytes}}</span>
+							<span class="percent">({{item.bytes.percent}}%)</span>
+						</td>
+						<td class="trunc">
+							<span class="value">{{item.data}}</span>
+						</td>
+					</tr>
+					{% if render_child %}
+					{% set outer_loop = loop %}
+					{% for detail in item.details %}
+					<tr class="child {{outer_loop.index|shaded}}" data-panel="os">
+						<td class="row-expandable text-center "> <i></i></td>
+						<td class="row-idx text-right"></td>
+						<td class="text-right">
+							<span class="value">{{detail.hits.count}}</span>
+							<span class="percent">{{detail.hits.percent}}</span>
+						</td>
+						<td class="text-right">
+							<span class="value">{{detail.visitors.count}}</span>
+							<span class="percent">{{detail.visitors.percent}}</span>
+						</td>
+						<td class="text-right">
+							<span class="value">{{detail.bytes.count|format_bytes}}</span>
+							<span class="percent">{{detail.bytes.percent}}</span>
+						</td>
+						<td class="trunc">
+							<span class="value">{{detail.data}}</span>
+						</td>
+					</tr>
+					{% endfor %}
+					{% endif %}
+					{% endfor %}
+					{% endif %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row equal">
+<div class="col-md-6 wrap-panel">
+<div id="panel-browsers">
+<div class="row">
+	<div class="col-md-12">
+		<div class="form-group clearfix panel-header">
+			<h4 class="pull-left hidden-xs gheader" id="browsers">
+				Browsers
+				<br>
+				<small>Top Browsers sorted by hits [, avgts, cumts, maxts]</small>
+			</h4>
+			<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="browsers">
+				Browsers
+				<br>
+				<small>Top Browsers sorted by hits [, avgts, cumts, maxts]</small>
+			</h5>
+			<div class="panel-plot-wrap"></div>
+		</div>
+	</div>
+</div>
+<div class="row clearfix table-wrapper hidden-xs">
+	<div class="col-md-12">
+		<div class="table-responsive">
+			<table data-panel="browsers" class="table table-borderless table-hover table-browsers">
+				<colgroup>
+				<col style="width: 2%;">
+				<!-- right-caret -->
+				<col style="width: 3%;">
+				<!-- row # -->
+				<col style="width:12%">
+				<col style="width:12%">
+				<col style="width:12%">
+				<col style="width:100%"></colgroup>
+			<thead>
+				<tr>
+					<th></th>
+					<th>#</th>
+					<th class="numeric sortable" data-key="hits" data-order="desc">
+						Hits
+						<i class="fa fa-caret-down"></i>
+					</th>
+					<th class="numeric sortable" data-key="visitors">
+						Visitors
+						<i class="fa fa-sort"></i>
+					</th>
+					<th class="bytes sortable" data-key="bytes">
+						Bandwidth
+						<i class="fa fa-sort"></i>
+					</th>
+					<th class="string sortable" data-key="data">
+						Data
+						<i class="fa fa-sort"></i>
+					</th>
+				</tr>
+			</thead>
+			<tbody class="tbody-meta">
+				<tr>
+					<td class=""></td>
+					<td class=""></td>
+					<td class="text-right">
+						<h4 class="value">
+							<span title="count">{{data.browsers.metadata.bytes.count|format_bytes}}</span>
+							<br>
+							<small>Max: {{data.browsers.metadata.bytes.max|format_bytes}}</small>
+							<br>
+							<small>Min: {{data.browsers.metadata.bytes.min|format_bytes}}</small>
+						</h4>
+					</td>
+					<td class="text-right">
+						<h4 class="value">
+							<span title="count">{{data.browsers.metadata.visitors.count}}</span>
+							<br>
+							<small>Max: {{data.browsers.metadata.visitors.max}}</small>
+							<br>
+							<small>Min: {{data.browsers.metadata.visitors.min}}</small>
+						</h4>
+					</td>
+					<td class="text-right">
+						<h4 class="value">
+							<span title="count">{{data.browsers.metadata.hits.count}}</span>
+							<br>
+							<small>Max: {{data.browsers.metadata.hits.max}}</small>
+							<br>
+							<small>Min: {{data.browsers.metadata.hits.min}}</small>
+						</h4>
+					</td>
+					<td class="trunc">
+						<h4 class="value">
+							<span title="unique">{{data.browsers.metadata.data.unique}}</span>
+							<small>Total</small>
+						</h4>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="tbody-data">
+				{% if data.browsers.metadata.data.unique == 0 %}
+				<tr class="" data-panel="">
+					<td class="row-idx text-right"></td>
+					<td class="text-center" colspan="7">
+						<span class="value">No data on this panel.</span>
+					</td>
+				</tr>
+				{% else %}
+				{% for item in data.browsers.data[:render_limit] %}
+				<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="browsers" data-key="6abac3ff">
+					<td class="row-expandable text-center clickable">
+						<i class="fa fa fa-caret-right"></i>
+					</td>
+					<td class="row-idx text-right">{{loop.index}}</td>
+					<td class="text-right">
+						<span class="value">{{item.hits.count}}</span>
+						<span class="percent">({{item.hits.percent}}%)</span>
+					</td>
+					<td class="text-right">
+						<span class="value">{{item.visitors.count}}</span>
+						<span class="percent">({{item.visitors.percent}}%)</span>
+					</td>
+					<td class="text-right">
+						<span class="value">{{item.bytes.count|format_bytes}}</span>
+						<span class="percent">({{item.bytes.percent}}%)</span>
+					</td>
+					<td class="trunc">
+						<span class="value">{{item.data}}</span>
+					</td>
+				</tr>
+				{% if render_child %}
+				{% set outer_loop = loop %}
+				{% for detail in item.details %}
+				<tr class="child {{outer_loop.index|shaded}}" data-panel="browsers">
+					<td class="row-expandable text-center "> <i></i></td>
+					<td class="row-idx text-right"></td>
+					<td class="text-right">
+						<span class="value">{{detail.hits.count}}</span>
+						<span class="percent">{{detail.hits.percent}}</span>
+					</td>
+					<td class="text-right">
+						<span class="value">{{detail.visitors.count}}</span>
+						<span class="percent">{{detail.visitors.percent}}</span>
+					</td>
+					<td class="text-right">
+						<span class="value">{{detail.bytes.count|format_bytes}}</span>
+						<span class="percent">{{detail.bytes.percent}}</span>
+					</td>
+					<td class="trunc">
+						<span class="value">{{detail.data}}</span>
+					</td>
+				</tr>
+				{% endfor %}
+				{% endif %}
+				{% endfor %}
+				{% endif %}
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 wrap-panel">
+<div id="panel-visit_time">
+<div class="row">
+<div class="col-md-12">
+	<div class="form-group clearfix panel-header">
+		<h4 class="pull-left hidden-xs gheader" id="visit_time">
+			Time Distribution
+			<br>
+			<small>Data sorted by hour [, avgts, cumts, maxts]</small>
+		</h4>
+		<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="visit_time">
+			Time Distribution
+			<br>
+			<small>Data sorted by hour [, avgts, cumts, maxts]</small>
+		</h5>
+		<div class="panel-plot-wrap"></div>
+	</div>
+</div>
+</div>
+<div class="row clearfix table-wrapper hidden-xs">
+<div class="col-md-12">
+	<div class="table-responsive">
+		<table data-panel="visit_time" class="table table-borderless table-hover table-visit_time">
+			<colgroup>
+			<col style="width: 3%;">
+			<!-- row # -->
+			<col style="width:12%">
+			<col style="width:12%">
+			<col style="width:12%">
+			<col style="width:100%"></colgroup>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th class="numeric sortable" data-key="hits">
+					Hits
+					<i class="fa fa-sort"></i>
+				</th>
+				<th class="numeric sortable" data-key="visitors">
+					Visitors
+					<i class="fa fa-sort"></i>
+				</th>
+				<th class="bytes sortable" data-key="bytes">
+					Bandwidth
+					<i class="fa fa-sort"></i>
+				</th>
+				<th class="string sortable" data-key="data" data-order="asc">
+					Data
+					<i class="fa fa-caret-up"></i>
+				</th>
+			</tr>
+		</thead>
+		<tbody class="tbody-meta">
+			<tr>
+				<td class=""></td>
+				<td class="text-right">
+					<h4 class="value">
+						<span title="count">{{data.visit_time.metadata.bytes.count|format_bytes}}</span>
+						<br>
+						<small>Max: {{data.visit_time.metadata.bytes.max|format_bytes}}</small>
+						<br>
+						<small>Min: {{data.visit_time.metadata.bytes.min|format_bytes}}</small>
+					</h4>
+				</td>
+				<td class="text-right">
+					<h4 class="value">
+						<span title="count">{{data.visit_time.metadata.visitors.count}}</span>
+						<br>
+						<small>Max: {{data.visit_time.metadata.visitors.max}}</small>
+						<br>
+						<small>Min: {{data.visit_time.metadata.visitors.min}}</small>
+					</h4>
+				</td>
+				<td class="text-right">
+					<h4 class="value">
+						<span title="count">{{data.visit_time.metadata.hits.count}}</span>
+						<br>
+						<small>Max: {{data.visit_time.metadata.hits.max}}</small>
+						<br>
+						<small>Min: {{data.visit_time.metadata.hits.min}}</small>
+					</h4>
+				</td>
+				<td class="trunc">
+					<h4 class="value">
+						<span title="unique">{{data.visit_time.metadata.data.unique}}</span>
+						<small>Total</small>
+					</h4>
+				</td>
+			</tr>
+		</tbody>
+		<tbody class="tbody-data">
+			{% if data.visit_time.metadata.data.unique == 0 %}
+			<tr class="" data-panel="">
+				<td class="row-idx text-right"></td>
+				<td class="text-center" colspan="7">
+					<span class="value">No data on this panel.</span>
+				</td>
+			</tr>
+			{% else %}
+			{% for item in data.visit_time.data[:render_limit] %}
+			<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="visit_time" data-key="61f">
+				<td class="row-idx text-right">{{loop.index}}</td>
+				<td class="text-right">
+					<span class="value">{{item.hits.count}}</span>
+					<span class="percent">({{item.hits.percent}}%)</span>
+				</td>
+				<td class="text-right">
+					<span class="value">{{item.visitors.count}}</span>
+					<span class="percent">({{item.visitors.percent}}%)</span>
+				</td>
+				<td class="text-right">
+					<span class="value">{{item.bytes.count|format_bytes}}</span>
+					<span class="percent">({{item.bytes.percent}}%)</span>
+				</td>
+				<td class="trunc">
+					<span class="value">{{item.data}}</span>
+				</td>
+			</tr>
+			{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row equal">
+<div class="col-md-6 wrap-panel">
+<div id="panel-referring_sites">
+<div class="row">
+<div class="col-md-12">
+<div class="form-group clearfix panel-header">
+	<h4 class="pull-left hidden-xs gheader" id="referring_sites">
+		Referring Sites
+		<br>
+		<small>Top Referring Sites sorted by hits [, avgts, cumts, maxts]</small>
+	</h4>
+	<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="referring_sites">
+		Referring Sites
+		<br>
+		<small>Top Referring Sites sorted by hits [, avgts, cumts, maxts]</small>
+	</h5>
+	<div class="panel-plot-wrap"></div>
+</div>
+</div>
+</div>
+<div class="row clearfix table-wrapper hidden-xs">
+<div class="col-md-12">
+<div class="table-responsive">
+	<table data-panel="referring_sites" class="table table-borderless table-hover table-referring_sites">
+		<colgroup>
+		<col style="width: 3%;">
+		<!-- row # -->
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:100%"></colgroup>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th class="numeric sortable" data-key="hits" data-order="desc">
+				Hits
+				<i class="fa fa-caret-down"></i>
+			</th>
+			<th class="numeric sortable" data-key="visitors">
+				Visitors
+				<i class="fa fa-sort"></i>
+			</th>
+			<th class="bytes sortable" data-key="bytes">
+				Bandwidth
+				<i class="fa fa-sort"></i>
+			</th>
+			<th class="string sortable" data-key="data">
+				Data
+				<i class="fa fa-sort"></i>
+			</th>
+		</tr>
+	</thead>
+	<tbody class="tbody-meta">
+		<tr>
+			<td class=""></td>
+			<td class="text-right">
+				<h4 class="value">
+					<span title="count">{{data.referring_sites.metadata.bytes.count|format_bytes}}</span>
+					<br>
+					<small>Max: {{data.referring_sites.metadata.bytes.max|format_bytes}}</small>
+					<br>
+					<small>Min: {{data.referring_sites.metadata.bytes.min|format_bytes}}</small>
+				</h4>
+			</td>
+			<td class="text-right">
+				<h4 class="value">
+					<span title="count">{{data.referring_sites.metadata.visitors.count}}</span>
+					<br>
+					<small>Max: {{data.referring_sites.metadata.visitors.max}}</small>
+					<br>
+					<small>Min: {{data.referring_sites.metadata.visitors.min}}</small>
+				</h4>
+			</td>
+			<td class="text-right">
+				<h4 class="value">
+					<span title="count">{{data.referring_sites.metadata.hits.count}}</span>
+					<br>
+					<small>Max: {{data.referring_sites.metadata.hits.max}}</small>
+					<br>
+					<small>Min: {{data.referring_sites.metadata.hits.min}}</small>
+				</h4>
+			</td>
+			<td class="trunc">
+				<h4 class="value">
+					<span title="unique">{{data.referring_sites.metadata.data.unique}}</span>
+					<small>Total</small>
+				</h4>
+			</td>
+		</tr>
+	</tbody>
+	<tbody class="tbody-data">
+		{% if data.referring_sites.metadata.data.unique == 0 %}
+		<tr class="" data-panel="">
+			<td class="row-idx text-right"></td>
+			<td class="text-center" colspan="7">
+				<span class="value">No data on this panel.</span>
+			</td>
+		</tr>
+		{% else %}
+		{% for item in data.referring_sites.data[:render_limit] %}
+		<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="referring_sites" data-key="f68be030">
+			<td class="row-idx text-right">{{loop.index}}</td>
+			<td class="text-right">
+				<span class="value">{{item.hits.count}}</span>
+				<span class="percent">({{item.hits.percent}}%)</span>
+			</td>
+			<td class="text-right">
+				<span class="value">{{item.visitors.count}}</span>
+				<span class="percent">({{item.visitors.percent}}%)</span>
+			</td>
+			<td class="text-right">
+				<span class="value">{{item.bytes.count|format_bytes}}</span>
+				<span class="percent">({{item.bytes.percent}}%)</span>
+			</td>
+			<td class="trunc">
+				<span class="value">{{item.data}}</span>
+			</td>
+		</tr>
+		{% endfor %}
+		{% endif %}
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 wrap-panel">
+<div id="panel-status_codes">
+<div class="row">
+<div class="col-md-12">
+<div class="form-group clearfix panel-header">
+<h4 class="pull-left hidden-xs gheader" id="status_codes">
+	HTTP Status Codes
+	<br>
+	<small>Top HTTP Status Codes sorted by hits [, avgts, cumts, maxts]</small>
+</h4>
+<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="status_codes">
+	HTTP Status Codes
+	<br>
+	<small>Top HTTP Status Codes sorted by hits [, avgts, cumts, maxts]</small>
+</h5>
+<div class="panel-plot-wrap"></div>
+</div>
+</div>
+</div>
+<div class="row clearfix table-wrapper hidden-xs">
+<div class="col-md-12">
+<div class="table-responsive">
+<table data-panel="status_codes" class="table table-borderless table-hover table-status_codes">
+	<colgroup>
+	<col style="width: 2%;">
+	<!-- right-caret -->
+	<col style="width: 3%;">
+	<!-- row # -->
+	<col style="width:12%">
+	<col style="width:12%">
+	<col style="width:12%">
+	<col style="width:100%"></colgroup>
+<thead>
+	<tr>
+		<th></th>
+		<th>#</th>
+		<th class="numeric sortable" data-key="hits" data-order="desc">
+			Hits
+			<i class="fa fa-caret-down"></i>
+		</th>
+		<th class="numeric sortable" data-key="visitors">
+			Visitors
+			<i class="fa fa-sort"></i>
+		</th>
+		<th class="bytes sortable" data-key="bytes">
+			Bandwidth
+			<i class="fa fa-sort"></i>
+		</th>
+		<th class="string sortable" data-key="data">
+			Data
+			<i class="fa fa-sort"></i>
+		</th>
+	</tr>
+</thead>
+<tbody class="tbody-meta">
+	<tr>
+		<td class=""></td>
+		<td class=""></td>
+		<td class="text-right">
+			<h4 class="value">
+				<span title="count">{{data.status_codes.metadata.bytes.count|format_bytes}}</span>
+				<br>
+				<small>Max: {{data.status_codes.metadata.bytes.max|format_bytes}}</small>
+				<br>
+				<small>Min: {{data.status_codes.metadata.bytes.min|format_bytes}}</small>
+			</h4>
+		</td>
+		<td class="text-right">
+			<h4 class="value">
+				<span title="count">{{data.status_codes.metadata.visitors.count}}</span>
+				<br>
+				<small>Max: {{data.status_codes.metadata.visitors.max}}</small>
+				<br>
+				<small>Min: {{data.status_codes.metadata.visitors.min}}</small>
+			</h4>
+		</td>
+		<td class="text-right">
+			<h4 class="value">
+				<span title="count">{{data.status_codes.metadata.hits.count}}</span>
+				<br>
+				<small>Max: {{data.status_codes.metadata.hits.max}}</small>
+				<br>
+				<small>Min: {{data.status_codes.metadata.hits.min}}</small>
+			</h4>
+		</td>
+		<td class="trunc">
+			<h4 class="value">
+				<span title="unique">{{data.status_codes.metadata.data.unique}}</span>
+				<small>Total</small>
+			</h4>
+		</td>
+	</tr>
+</tbody>
+<tbody class="tbody-data">
+	{% if data.status_codes.metadata.data.unique == 0 %}
+	<tr class="" data-panel="">
+		<td class="row-idx text-right"></td>
+		<td class="text-center" colspan="7">
+			<span class="value">No data on this panel.</span>
+		</td>
+	</tr>
+	{% else %}
+	{% for item in data.status_codes.data[:render_limit] %}
+	<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="status_codes" data-key="6327505f">
+		<td class="row-expandable text-center clickable">
+			<i class="fa fa fa-caret-right"></i>
+		</td>
+		<td class="row-idx text-right">{{loop.index}}</td>
+		<td class="text-right">
+			<span class="value">{{item.hits.count}}</span>
+			<span class="percent">({{item.hits.percent}}%)</span>
+		</td>
+		<td class="text-right">
+			<span class="value">{{item.visitors.count}}</span>
+			<span class="percent">({{item.visitors.percent}}%)</span>
+		</td>
+		<td class="text-right">
+			<span class="value">{{item.bytes.count|format_bytes}}</span>
+			<span class="percent">({{item.bytes.percent}}%)</span>
+		</td>
+		<td class="trunc">
+			<span class="value">{{item.data}}</span>
+		</td>
+	</tr>
+	{% if render_child %}
+	{% set outer_loop = loop %}
+	{% for detail in item.details %}
+	<tr class="child {{outer_loop.index|shaded}}" data-panel="status_codes">
+		<td class="row-expandable text-center "> <i></i></td>
+		<td class="row-idx text-right"></td>
+		<td class="text-right">
+			<span class="value">{{detail.hits.count}}</span>
+			<span class="percent">{{detail.hits.percent}}</span>
+		</td>
+		<td class="text-right">
+			<span class="value">{{detail.visitors.count}}</span>
+			<span class="percent">{{detail.visitors.percent}}</span>
+		</td>
+		<td class="text-right">
+			<span class="value">{{detail.bytes.count|format_bytes}}</span>
+			<span class="percent">{{detail.bytes.percent}}</span>
+		</td>
+		<td class="trunc">
+			<span class="value">{{detail.data}}</span>
+		</td>
+	</tr>
+	{% endfor %}
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row equal">
+<div class="col-md-6 wrap-panel">
+<div id="panel-geolocation">
+<div class="row">
+<div class="col-md-12">
+<div class="form-group clearfix panel-header">
+<h4 class="pull-left hidden-xs gheader" id="geolocation">
+Geo Location
+<br>
+<small>
+	Continent &gt; Country sorted by unique hits [, avgts, cumts, maxts]
+</small>
+</h4>
+<h5 class="pull-left visible-xs hidden-sm hidden-md hidden-lg gheader" id="geolocation">
+Geo Location
+<br>
+<small>
+	Continent &gt; Country sorted by unique hits [, avgts, cumts, maxts]
+</small>
+</h5>
+<div class="panel-plot-wrap"></div>
+</div>
+</div>
+</div>
+<div class="row clearfix table-wrapper hidden-xs">
+<div class="col-md-12">
+<div class="table-responsive">
+<table data-panel="geolocation" class="table table-borderless table-hover table-geolocation">
+<colgroup>
+<col style="width: 2%;">
+<!-- right-caret -->
+<col style="width: 3%;">
+<!-- row # -->
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:100%"></colgroup>
+<thead>
+<tr>
+	<th></th>
+	<th>#</th>
+	<th class="numeric sortable" data-key="hits" data-order="desc">
+		Hits
+		<i class="fa fa-caret-down"></i>
+	</th>
+	<th class="numeric sortable" data-key="visitors">
+		Visitors
+		<i class="fa fa-sort"></i>
+	</th>
+	<th class="bytes sortable" data-key="bytes">
+		Bandwidth
+		<i class="fa fa-sort"></i>
+	</th>
+	<th class="string sortable" data-key="data">
+		Data
+		<i class="fa fa-sort"></i>
+	</th>
+</tr>
+</thead>
+<tbody class="tbody-meta">
+<tr>
+	<td class=""></td>
+	<td class=""></td>
+	<td class="text-right">
+		<h4 class="value">
+			<span title="count">{{data.geolocation.metadata.bytes.count|format_bytes}}</span>
+			<br>
+			<small>Max: {{data.geolocation.metadata.bytes.max|format_bytes}}</small>
+			<br>
+			<small>Min: {{data.geolocation.metadata.bytes.min|format_bytes}}</small>
+		</h4>
+	</td>
+	<td class="text-right">
+		<h4 class="value">
+			<span title="count">{{data.geolocation.metadata.visitors.count}}</span>
+			<br>
+			<small>Max: {{data.geolocation.metadata.visitors.max}}</small>
+			<br>
+			<small>Min: {{data.geolocation.metadata.visitors.min}}</small>
+		</h4>
+	</td>
+	<td class="text-right">
+		<h4 class="value">
+			<span title="count">{{data.geolocation.metadata.hits.count}}</span>
+			<br>
+			<small>Max: {{data.geolocation.metadata.hits.max}}</small>
+			<br>
+			<small>Min: {{data.geolocation.metadata.hits.min}}</small>
+		</h4>
+	</td>
+	<td class="trunc">
+		<h4 class="value">
+			<span title="unique">{{data.geolocation.metadata.data.unique}}</span>
+			<small>Total</small>
+		</h4>
+	</td>
+</tr>
+</tbody>
+<tbody class="tbody-data">
+{% if data.geolocation.metadata.data.unique == 0 %}
+<tr class="" data-panel="">
+	<td class="row-idx text-right"></td>
+	<td class="text-center" colspan="7">
+		<span class="value">No data on this panel.</span>
+	</td>
+</tr>
+{% else %}
+{% for item in data.geolocation.data[:render_limit] %}
+<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="geolocation" data-key="fdf98018">
+	<td class="row-expandable text-center clickable">
+		<i class="fa fa fa-caret-right"></i>
+	</td>
+	<td class="row-idx text-right">{{loop.index}}</td>
+	<td class="text-right">
+		<span class="value">{{item.hits.count}}</span>
+		<span class="percent">({{item.hits.percent}}%)</span>
+	</td>
+	<td class="text-right">
+		<span class="value">{{item.visitors.count}}</span>
+		<span class="percent">({{item.visitors.percent}}%)</span>
+	</td>
+	<td class="text-right">
+		<span class="value">{{item.bytes.count|format_bytes}}</span>
+		<span class="percent">({{item.bytes.percent}}%)</span>
+	</td>
+	<td class="trunc">
+		<span class="value">{{item.data}}</span>
+	</td>
+</tr>
+{% if render_child %}
+{% set outer_loop = loop %}
+{% for detail in item.details %}
+<tr class="child {{outer_loop.index|shaded}}" data-panel="geolocation">
+	<td class="row-expandable text-center "> <i></i></td>
+	<td class="row-idx text-right"></td>
+	<td class="text-right">
+		<span class="value">{{detail.hits.count}}</span>
+		<span class="percent">{{detail.hits.percent}}</span>
+	</td>
+	<td class="text-right">
+		<span class="value">{{detail.visitors.count}}</span>
+		<span class="percent">{{detail.visitors.percent}}</span>
+	</td>
+	<td class="text-right">
+		<span class="value">{{detail.bytes.count|format_bytes}}</span>
+		<span class="percent">{{detail.bytes.percent}}</span>
+	</td>
+	<td class="trunc">
+		<span class="value">{{detail.data}}</span>
+	</td>
+</tr>
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
