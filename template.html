@@ -179,7 +179,7 @@
 												<i class="fa fa-bar-chart"></i>
 												Bandwidth
 											</div>
-											<h3 id="bandwidth" style="padding-top: 0;">{{data.general.bandwidth}}</h3>
+											<h3 id="bandwidth" style="padding-top: 0;">{{data.general.bandwidth|format_bytes}}</h3>
 										</div>
 									</div>
 								</div>
@@ -247,11 +247,11 @@
 											<td class=""></td>
 											<td class="text-right">
 												<h4 class="value">
-													<span title="count">{{data.visitors.metadata.bytes.count|format_bytes}}</span>
+													<span title="count">{{data.visitors.metadata.hits.count}}</span>
 													<br>
-													<small>Max: {{data.visitors.metadata.bytes.max|format_bytes}}</small>
+													<small>Max: {{data.visitors.metadata.hits.max}}</small>
 													<br>
-													<small>Min: {{data.visitors.metadata.bytes.min|format_bytes}}</small>
+													<small>Min: {{data.visitors.metadata.hits.min}}</small>
 												</h4>
 											</td>
 											<td class="text-right">
@@ -265,11 +265,11 @@
 											</td>
 											<td class="text-right">
 												<h4 class="value">
-													<span title="count">{{data.visitors.metadata.hits.count}}</span>
+													<span title="count">{{data.visitors.metadata.bytes.count|format_bytes}}</span>
 													<br>
-													<small>Max: {{data.visitors.metadata.hits.max}}</small>
+													<small>Max: {{data.visitors.metadata.bytes.max|format_bytes}}</small>
 													<br>
-													<small>Min: {{data.visitors.metadata.hits.min}}</small>
+													<small>Min: {{data.visitors.metadata.bytes.min|format_bytes}}</small>
 												</h4>
 											</td>
 											<td class="trunctext-right">
@@ -387,11 +387,11 @@
 										<td class=""></td>
 										<td class="text-right">
 											<h4 class="value">
-												<span title="count">{{data.requests.metadata.bytes.count|format_bytes}}</span>
+												<span title="count">{{data.requests.metadata.hits.count}}</span>
 												<br>
-												<small>Max: {{data.requests.metadata.bytes.max|format_bytes}}</small>
+												<small>Max: {{data.requests.metadata.hits.max}}</small>
 												<br>
-												<small>Min: {{data.requests.metadata.bytes.min|format_bytes}}</small>
+												<small>Min: {{data.requests.metadata.hits.min}}</small>
 											</h4>
 										</td>
 										<td class="text-right">
@@ -405,11 +405,11 @@
 										</td>
 										<td class="text-right">
 											<h4 class="value">
-												<span title="count">{{data.requests.metadata.hits.count}}</span>
+												<span title="count">{{data.requests.metadata.bytes.count|format_bytes}}</span>
 												<br>
-												<small>Max: {{data.requests.metadata.hits.max}}</small>
+												<small>Max: {{data.requests.metadata.bytes.max|format_bytes}}</small>
 												<br>
-												<small>Min: {{data.requests.metadata.hits.min}}</small>
+												<small>Min: {{data.requests.metadata.bytes.min|format_bytes}}</small>
 											</h4>
 										</td>
 										<td class=""></td>
@@ -537,11 +537,11 @@
 									<td class=""></td>
 									<td class="text-right">
 										<h4 class="value">
-											<span title="count">{{data.static_requests.metadata.bytes.count|format_bytes}}</span>
+											<span title="count">{{data.static_requests.metadata.hits.count}}</span>
 											<br>
-											<small>Max: {{data.static_requests.metadata.bytes.max|format_bytes}}</small>
+											<small>Max: {{data.static_requests.metadata.hits.max}}</small>
 											<br>
-											<small>Min: {{data.static_requests.metadata.bytes.min|format_bytes}}</small>
+											<small>Min: {{data.static_requests.metadata.hits.min}}</small>
 										</h4>
 									</td>
 									<td class="text-right">
@@ -555,11 +555,11 @@
 									</td>
 									<td class="text-right">
 										<h4 class="value">
-											<span title="count">{{data.static_requests.metadata.hits.count}}</span>
+											<span title="count">{{data.static_requests.metadata.bytes.count|format_bytes}}</span>
 											<br>
-											<small>Max: {{data.static_requests.metadata.hits.max}}</small>
+											<small>Max: {{data.static_requests.metadata.bytes.max|format_bytes}}</small>
 											<br>
-											<small>Min: {{data.static_requests.metadata.hits.min}}</small>
+											<small>Min: {{data.static_requests.metadata.bytes.min|format_bytes}}</small>
 										</h4>
 									</td>
 									<td class=""></td>
@@ -685,11 +685,11 @@
 								<td class=""></td>
 								<td class="text-right">
 									<h4 class="value">
-										<span title="count">{{data.not_found.metadata.bytes.count|format_bytes}}</span>
+										<span title="count">{{data.not_found.metadata.hits.count}}</span>
 										<br>
-										<small>Max: {{data.not_found.metadata.bytes.max|format_bytes}}</small>
+										<small>Max: {{data.not_found.metadata.hits.max}}</small>
 										<br>
-										<small>Min: {{data.not_found.metadata.bytes.min|format_bytes}}</small>
+										<small>Min: {{data.not_found.metadata.hits.min}}</small>
 									</h4>
 								</td>
 								<td class="text-right">
@@ -703,11 +703,11 @@
 								</td>
 								<td class="text-right">
 									<h4 class="value">
-										<span title="count">{{data.not_found.metadata.hits.count}}</span>
+										<span title="count">{{data.not_found.metadata.bytes.count|format_bytes}}</span>
 										<br>
-										<small>Max: {{data.not_found.metadata.hits.max}}</small>
+										<small>Max: {{data.not_found.metadata.bytes.max|format_bytes}}</small>
 										<br>
-										<small>Min: {{data.not_found.metadata.hits.min}}</small>
+										<small>Min: {{data.not_found.metadata.bytes.min|format_bytes}}</small>
 									</h4>
 								</td>
 								<td class=""></td>
@@ -830,11 +830,11 @@
 							<td class=""></td>
 							<td class="text-right">
 								<h4 class="value">
-									<span title="count">{{data.hosts.metadata.bytes.count|format_bytes}}</span>
+									<span title="count">{{data.hosts.metadata.hits.count}}</span>
 									<br>
-									<small>Max: {{data.hosts.metadata.bytes.max|format_bytes}}</small>
+									<small>Max: {{data.hosts.metadata.hits.max}}</small>
 									<br>
-									<small>Min: {{data.hosts.metadata.bytes.min|format_bytes}}</small>
+									<small>Min: {{data.hosts.metadata.hits.min}}</small>
 								</h4>
 							</td>
 							<td class="text-right">
@@ -848,11 +848,11 @@
 							</td>
 							<td class="text-right">
 								<h4 class="value">
-									<span title="count">{{data.hosts.metadata.hits.count}}</span>
+									<span title="count">{{data.hosts.metadata.bytes.count|format_bytes}}</span>
 									<br>
-									<small>Max: {{data.hosts.metadata.hits.max}}</small>
+									<small>Max: {{data.hosts.metadata.bytes.max|format_bytes}}</small>
 									<br>
-									<small>Min: {{data.hosts.metadata.hits.min}}</small>
+									<small>Min: {{data.hosts.metadata.bytes.min|format_bytes}}</small>
 								</h4>
 							</td>
 							<td class=""></td>
@@ -981,11 +981,11 @@
 						<td class=""></td>
 						<td class="text-right">
 							<h4 class="value">
-								<span title="count">{{data.os.metadata.bytes.count|format_bytes}}</span>
+								<span title="count">{{data.os.metadata.hits.count}}</span>
 								<br>
-								<small>Max: {{data.os.metadata.bytes.max|format_bytes}}</small>
+								<small>Max: {{data.os.metadata.hits.max}}</small>
 								<br>
-								<small>Min: {{data.os.metadata.bytes.min|format_bytes}}</small>
+								<small>Min: {{data.os.metadata.hits.min}}</small>
 							</h4>
 						</td>
 						<td class="text-right">
@@ -999,11 +999,11 @@
 						</td>
 						<td class="text-right">
 							<h4 class="value">
-								<span title="count">{{data.os.metadata.hits.count}}</span>
+								<span title="count">{{data.os.metadata.bytes.count|format_bytes}}</span>
 								<br>
-								<small>Max: {{data.os.metadata.hits.max}}</small>
+								<small>Max: {{data.os.metadata.bytes.max|format_bytes}}</small>
 								<br>
-								<small>Min: {{data.os.metadata.hits.min}}</small>
+								<small>Min: {{data.os.metadata.bytes.min|format_bytes}}</small>
 							</h4>
 						</td>
 						<td class="trunc">
@@ -1140,11 +1140,11 @@
 					<td class=""></td>
 					<td class="text-right">
 						<h4 class="value">
-							<span title="count">{{data.browsers.metadata.bytes.count|format_bytes}}</span>
+							<span title="count">{{data.browsers.metadata.hits.count}}</span>
 							<br>
-							<small>Max: {{data.browsers.metadata.bytes.max|format_bytes}}</small>
+							<small>Max: {{data.browsers.metadata.hits.max}}</small>
 							<br>
-							<small>Min: {{data.browsers.metadata.bytes.min|format_bytes}}</small>
+							<small>Min: {{data.browsers.metadata.hits.min}}</small>
 						</h4>
 					</td>
 					<td class="text-right">
@@ -1158,11 +1158,11 @@
 					</td>
 					<td class="text-right">
 						<h4 class="value">
-							<span title="count">{{data.browsers.metadata.hits.count}}</span>
+							<span title="count">{{data.browsers.metadata.bytes.count|format_bytes}}</span>
 							<br>
-							<small>Max: {{data.browsers.metadata.hits.max}}</small>
+							<small>Max: {{data.browsers.metadata.bytes.max|format_bytes}}</small>
 							<br>
-							<small>Min: {{data.browsers.metadata.hits.min}}</small>
+							<small>Min: {{data.browsers.metadata.bytes.min|format_bytes}}</small>
 						</h4>
 					</td>
 					<td class="trunc">
@@ -1293,11 +1293,11 @@
 				<td class=""></td>
 				<td class="text-right">
 					<h4 class="value">
-						<span title="count">{{data.visit_time.metadata.bytes.count|format_bytes}}</span>
+						<span title="count">{{data.visit_time.metadata.hits.count}}</span>
 						<br>
-						<small>Max: {{data.visit_time.metadata.bytes.max|format_bytes}}</small>
+						<small>Max: {{data.visit_time.metadata.hits.max}}</small>
 						<br>
-						<small>Min: {{data.visit_time.metadata.bytes.min|format_bytes}}</small>
+						<small>Min: {{data.visit_time.metadata.hits.min}}</small>
 					</h4>
 				</td>
 				<td class="text-right">
@@ -1311,11 +1311,11 @@
 				</td>
 				<td class="text-right">
 					<h4 class="value">
-						<span title="count">{{data.visit_time.metadata.hits.count}}</span>
+						<span title="count">{{data.visit_time.metadata.bytes.count|format_bytes}}</span>
 						<br>
-						<small>Max: {{data.visit_time.metadata.hits.max}}</small>
+						<small>Max: {{data.visit_time.metadata.bytes.max|format_bytes}}</small>
 						<br>
-						<small>Min: {{data.visit_time.metadata.hits.min}}</small>
+						<small>Min: {{data.visit_time.metadata.bytes.min|format_bytes}}</small>
 					</h4>
 				</td>
 				<td class="trunc">
@@ -1421,11 +1421,11 @@
 			<td class=""></td>
 			<td class="text-right">
 				<h4 class="value">
-					<span title="count">{{data.referring_sites.metadata.bytes.count|format_bytes}}</span>
+					<span title="count">{{data.referring_sites.metadata.hits.count}}</span>
 					<br>
-					<small>Max: {{data.referring_sites.metadata.bytes.max|format_bytes}}</small>
+					<small>Max: {{data.referring_sites.metadata.hits.max}}</small>
 					<br>
-					<small>Min: {{data.referring_sites.metadata.bytes.min|format_bytes}}</small>
+					<small>Min: {{data.referring_sites.metadata.hits.min}}</small>
 				</h4>
 			</td>
 			<td class="text-right">
@@ -1439,11 +1439,11 @@
 			</td>
 			<td class="text-right">
 				<h4 class="value">
-					<span title="count">{{data.referring_sites.metadata.hits.count}}</span>
+					<span title="count">{{data.referring_sites.metadata.bytes.count|format_bytes}}</span>
 					<br>
-					<small>Max: {{data.referring_sites.metadata.hits.max}}</small>
+					<small>Max: {{data.referring_sites.metadata.bytes.max|format_bytes}}</small>
 					<br>
-					<small>Min: {{data.referring_sites.metadata.hits.min}}</small>
+					<small>Min: {{data.referring_sites.metadata.bytes.min|format_bytes}}</small>
 				</h4>
 			</td>
 			<td class="trunc">
@@ -1551,11 +1551,11 @@
 		<td class=""></td>
 		<td class="text-right">
 			<h4 class="value">
-				<span title="count">{{data.status_codes.metadata.bytes.count|format_bytes}}</span>
+				<span title="count">{{data.status_codes.metadata.hits.count}}</span>
 				<br>
-				<small>Max: {{data.status_codes.metadata.bytes.max|format_bytes}}</small>
+				<small>Max: {{data.status_codes.metadata.hits.max}}</small>
 				<br>
-				<small>Min: {{data.status_codes.metadata.bytes.min|format_bytes}}</small>
+				<small>Min: {{data.status_codes.metadata.hits.min}}</small>
 			</h4>
 		</td>
 		<td class="text-right">
@@ -1569,11 +1569,11 @@
 		</td>
 		<td class="text-right">
 			<h4 class="value">
-				<span title="count">{{data.status_codes.metadata.hits.count}}</span>
+				<span title="count">{{data.status_codes.metadata.bytes.count|format_bytes}}</span>
 				<br>
-				<small>Max: {{data.status_codes.metadata.hits.max}}</small>
+				<small>Max: {{data.status_codes.metadata.bytes.max|format_bytes}}</small>
 				<br>
-				<small>Min: {{data.status_codes.metadata.hits.min}}</small>
+				<small>Min: {{data.status_codes.metadata.bytes.min|format_bytes}}</small>
 			</h4>
 		</td>
 		<td class="trunc">
@@ -1714,11 +1714,11 @@ Geo Location
 	<td class=""></td>
 	<td class="text-right">
 		<h4 class="value">
-			<span title="count">{{data.geolocation.metadata.bytes.count|format_bytes}}</span>
+			<span title="count">{{data.geolocation.metadata.hits.count}}</span>
 			<br>
-			<small>Max: {{data.geolocation.metadata.bytes.max|format_bytes}}</small>
+			<small>Max: {{data.geolocation.metadata.hits.max}}</small>
 			<br>
-			<small>Min: {{data.geolocation.metadata.bytes.min|format_bytes}}</small>
+			<small>Min: {{data.geolocation.metadata.hits.min}}</small>
 		</h4>
 	</td>
 	<td class="text-right">
@@ -1732,11 +1732,11 @@ Geo Location
 	</td>
 	<td class="text-right">
 		<h4 class="value">
-			<span title="count">{{data.geolocation.metadata.hits.count}}</span>
+			<span title="count">{{data.geolocation.metadata.bytes.count|format_bytes}}</span>
 			<br>
-			<small>Max: {{data.geolocation.metadata.hits.max}}</small>
+			<small>Max: {{data.geolocation.metadata.bytes.max|format_bytes}}</small>
 			<br>
-			<small>Min: {{data.geolocation.metadata.hits.min}}</small>
+			<small>Min: {{data.geolocation.metadata.bytes.min|format_bytes}}</small>
 		</h4>
 	</td>
 	<td class="trunc">
