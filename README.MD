@@ -1,6 +1,6 @@
 # README
 
-This script generate plain html report from goaccess json file, the template is from goaccess bright theme, and the css are already compressed.
+This script use **jinja2** to generate plain html report from goaccess json file, the template is from goaccess bright theme, and the css are already compressed. The generated html file use no javascript and don't support charts, it suits the needs to send daily report mail.
 
 ```
 $ python goaccess-render-plain-html.py -h
