@@ -1,3 +1,11 @@
+{% macro nodata() -%}
+<tr class="" data-panel="">
+	<td class="row-idx text-right"></td>
+	<td class="text-center" colspan="7">
+		<span class="value">No data on this panel.</span>
+	</td>
+</tr>
+{%- endmacro %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -282,15 +290,10 @@
 									</tbody>
 									<tbody class="tbody-data">
 										{% if data.visitors.metadata.data.unique == 0 %}
-										<tr class="" data-panel="">
-											<td class="row-idx text-right"></td>
-											<td class="text-center" colspan="7">
-												<span class="value">No data on this panel.</span>
-											</td>
-										</tr>
+											{{ nodata() }}
 										{% else %}
 										{% for item in data.visitors.data[:render_limit] %}
-										<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="visitors" data-key="8bef7ac8">
+										<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="visitors" data-key="">
 											<td class="row-idx text-right">{{loop.index}}</td>
 											<td class="text-right">
 												<span class="value">{{item.hits.count}}</span>
@@ -424,12 +427,7 @@
 								</tbody>
 								<tbody class="tbody-data">
 									{% if data.requests.metadata.data.unique == 0 %}
-									<tr class="" data-panel="">
-										<td class="row-idx text-right"></td>
-										<td class="text-center" colspan="7">
-											<span class="value">No data on this panel.</span>
-										</td>
-									</tr>
+										{{ nodata() }}
 									{% else %}
 									{% for item in data.requests.data[:render_limit] %}
 									<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="requests" data-key="2f">
@@ -574,15 +572,10 @@
 							</tbody>
 							<tbody class="tbody-data">
 								{% if data.static_requests.metadata.data.unique == 0 %}
-								<tr class="" data-panel="">
-									<td class="row-idx text-right"></td>
-									<td class="text-center" colspan="7">
-										<span class="value">No data on this panel.</span>
-									</td>
-								</tr>
+									{{ nodata() }}
 								{% else %}
 								{% for item in data.static_requests.data[:render_limit] %}
-								<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="static_requests" data-key="e8c193ba">
+								<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="static_requests" data-key="">
 									<td class="row-idx text-right">{{loop.index}}</td>
 									<td class="text-right">
 										<span class="value">{{item.hits.count}}</span>
@@ -722,15 +715,10 @@
 						</tbody>
 						<tbody class="tbody-data">
 							{% if data.not_found.metadata.data.unique == 0 %}
-							<tr class="" data-panel="">
-								<td class="row-idx text-right"></td>
-								<td class="text-center" colspan="7">
-									<span class="value">No data on this panel.</span>
-								</td>
-							</tr>
+								{{ nodata() }}
 							{% else %}
 							{% for item in data.not_found.data[:render_limit] %}
-							<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="not_found" data-key="e8c193ba">
+							<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="not_found" data-key="">
 								<td class="row-idx text-right">{{loop.index}}</td>
 								<td class="text-right">
 									<span class="value">{{item.hits.count}}</span>
@@ -866,15 +854,10 @@
 					</tbody>
 					<tbody class="tbody-data">
 						{% if data.hosts.metadata.data.unique == 0 %}
-						<tr class="" data-panel="">
-							<td class="row-idx text-right"></td>
-							<td class="text-center" colspan="7">
-								<span class="value">No data on this panel.</span>
-							</td>
-						</tr>
+							{{ nodata() }}
 						{% else %}
 						{% for item in data.hosts.data[:render_limit] %}
-						<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="hosts" data-key="c8817ade">
+						<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="hosts" data-key="">
 							<td class="row-expandable text-center clickable">
 								<i class="fa fa fa-caret-right"></i>
 							</td>
@@ -1016,15 +999,10 @@
 				</tbody>
 				<tbody class="tbody-data">
 					{% if data.os.metadata.data.unique == 0 %}
-					<tr class="" data-panel="">
-						<td class="row-idx text-right"></td>
-						<td class="text-center" colspan="7">
-							<span class="value">No data on this panel.</span>
-						</td>
-					</tr>
+						{{ nodata() }}
 					{% else %}
 					{% for item in data.os.data[:render_limit] %}
-					<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="os" data-key="b3a83a63">
+					<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="os" data-key="">
 						<td class="row-expandable text-center clickable">
 							<i class="fa fa fa-caret-right"></i>
 						</td>
@@ -1175,15 +1153,10 @@
 			</tbody>
 			<tbody class="tbody-data">
 				{% if data.browsers.metadata.data.unique == 0 %}
-				<tr class="" data-panel="">
-					<td class="row-idx text-right"></td>
-					<td class="text-center" colspan="7">
-						<span class="value">No data on this panel.</span>
-					</td>
-				</tr>
+					{{ nodata() }}
 				{% else %}
 				{% for item in data.browsers.data[:render_limit] %}
-				<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="browsers" data-key="6abac3ff">
+				<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="browsers" data-key="">
 					<td class="row-expandable text-center clickable">
 						<i class="fa fa fa-caret-right"></i>
 					</td>
@@ -1328,12 +1301,7 @@
 		</tbody>
 		<tbody class="tbody-data">
 			{% if data.visit_time.metadata.data.unique == 0 %}
-			<tr class="" data-panel="">
-				<td class="row-idx text-right"></td>
-				<td class="text-center" colspan="7">
-					<span class="value">No data on this panel.</span>
-				</td>
-			</tr>
+				{{ nodata() }}
 			{% else %}
 			{% for item in data.visit_time.data[:render_limit] %}
 			<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="visit_time" data-key="61f">
@@ -1456,15 +1424,10 @@
 	</tbody>
 	<tbody class="tbody-data">
 		{% if data.referring_sites.metadata.data.unique == 0 %}
-		<tr class="" data-panel="">
-			<td class="row-idx text-right"></td>
-			<td class="text-center" colspan="7">
-				<span class="value">No data on this panel.</span>
-			</td>
-		</tr>
+			{{ nodata() }}
 		{% else %}
 		{% for item in data.referring_sites.data[:render_limit] %}
-		<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="referring_sites" data-key="f68be030">
+		<tr class="parent {{loop.index|shaded}}" data-pid="{{loop.index}}" data-panel="referring_sites" data-key="">
 			<td class="row-idx text-right">{{loop.index}}</td>
 			<td class="text-right">
 				<span class="value">{{item.hits.count}}</span>
@@ -1586,15 +1549,10 @@
 </tbody>
 <tbody class="tbody-data">
 	{% if data.status_codes.metadata.data.unique == 0 %}
-	<tr class="" data-panel="">
-		<td class="row-idx text-right"></td>
-		<td class="text-center" colspan="7">
-			<span class="value">No data on this panel.</span>
-		</td>
-	</tr>
+		{{ nodata() }}
 	{% else %}
 	{% for item in data.status_codes.data[:render_limit] %}
-	<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="status_codes" data-key="6327505f">
+	<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="status_codes" data-key="">
 		<td class="row-expandable text-center clickable">
 			<i class="fa fa fa-caret-right"></i>
 		</td>
@@ -1749,15 +1707,10 @@ Geo Location
 </tbody>
 <tbody class="tbody-data">
 {% if data.geolocation.metadata.data.unique == 0 %}
-<tr class="" data-panel="">
-	<td class="row-idx text-right"></td>
-	<td class="text-center" colspan="7">
-		<span class="value">No data on this panel.</span>
-	</td>
-</tr>
+	{{ nodata() }}
 {% else %}
 {% for item in data.geolocation.data[:render_limit] %}
-<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="geolocation" data-key="fdf98018">
+<tr class="parent {{loop.index|shaded}} expandable" data-pid="{{loop.index}}" data-panel="geolocation" data-key="">
 	<td class="row-expandable text-center clickable">
 		<i class="fa fa fa-caret-right"></i>
 	</td>
