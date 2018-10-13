@@ -40,7 +40,7 @@ def main(args):
 	env.filters['format_bytes'] = format_bytes
 	template = env.get_template('template.html')
 
-	data = json.loads(codecs.open(args.input, "r", "utf-8").read().replace('"items": ', '"details": '))
+	data = json.loads(codecs.open(args.input, "r", "utf-8").read().replace('"items": ', '"details": ').replace('HTTP/1.1\\N', 'HTTP/1.1\\\\N'))
 
 	html = template.render(data=data, render_child=args.child, render_limit=args.limit, render_title=args.title)
 	if args.style == "inline":
