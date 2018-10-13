@@ -1,4 +1,4 @@
-# README
+# What for?
 
 This script use **jinja2** to generate plain html report from goaccess json file, the template is from goaccess bright theme, and the css are already compressed. The generated html file use no javascript and don't support charts, it suits the needs to send daily report mail.
 
@@ -22,3 +22,6 @@ optional arguments:
   -t TITLE, --title TITLE
                         the page title, default "Server Statistics"
 ```
+
+# update
+- 20181013 Delete all unused fonts from base64 code in style.css(21.2KB -> 11.7KB)
